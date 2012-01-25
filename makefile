@@ -1,6 +1,9 @@
 #On obtient l'OS
 OS := $(shell uname)
 
+#par défaut
+LINK := -lsfml-system
+
 ifeq ($(OS), Darwin) #Mac OS X
 LINK := -framework sfml-system
 endif
@@ -10,12 +13,7 @@ LINK := -lsfml-system
 endif
 
 #A Faire cas pour Windows
-#$GIT_COMMIT = "'" GIT_COMMIT" [Commit depuis le MakeFile]'"; \
-	#echo "git commit -m" $$GIT_COMMIT";"; \
-	#git commit -m "'"$$GIT_COMMIT" [Commit depuis le MakeFile]'"; \
-	#git push -u origin master;
-	#@echo "Donner une description pour le commit (mettre entre guillemets simples => ' : "; \
-	#read GIT_COMMIT ; \
+
 	
 git: #Fait un commit, le \ sert à éxecuter d'une fois
 	git commit -a -m '[Commit depuis le MakeFile]' ; \
@@ -31,3 +29,9 @@ exec: main.o
 
 main.o: main.cpp
 	g++ -c main.cpp
+	
+help:
+	@clear
+	@echo "===============HELP===============\n"
+	@echo "\tgit:\tfait un commit (marche si git vous avez les droits de faire des commits, ceci est surtout utilisé lors du développement pour des commits rapides\n"
+	@echo "\tall:\tfait l'executable"

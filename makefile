@@ -1,5 +1,9 @@
 #On obtient l'OS
 OS := $(shell uname)
+#Dossier pour les fichier objets
+OBJ_DIR := obj/
+#Dossier pour l'executable
+BIN_DIR :=
 
 #par défaut
 LINK := -lsfml-system
@@ -25,9 +29,9 @@ all: exec
 	@echo "Le système d'exploitation est : "$(OS) 
 
 exec: main.o
-	g++ -o exec main.o ($LINK)
+	g++ -o exec $(OBJ_DIR)main.o ($LINK)
 
-main.o: main.cpp
+$(OBJ_DIR)main.o: main.cpp
 	g++ -c main.cpp
 	
 help:

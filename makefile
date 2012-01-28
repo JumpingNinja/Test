@@ -1,3 +1,4 @@
+#1
 #On obtient l'OS
 OS := $(shell uname)
 #Dossier pour les fichier objets
@@ -26,6 +27,7 @@ all: exec
 	@echo "Le système d'exploitation est : "$(OS)
 	@echo "Supression des fichiers objets (*.o)"
 	rm *.o
+	./exec
 
 exec: main.o
 	g++ -o exec main.o $(LINK)

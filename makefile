@@ -1,5 +1,3 @@
-#12
-#56
 #On obtient l'OS
 OS := $(shell uname)
 #Dossier pour les fichier objets

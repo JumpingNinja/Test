@@ -1,4 +1,7 @@
 #12
+#3
+#4
+#5
 #On obtient l'OS
 OS := $(shell uname)
 #Dossier pour les fichier objets

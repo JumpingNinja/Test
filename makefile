@@ -1,4 +1,5 @@
 #On obtient l'OS
+# Test de commentaire !
 OS := $(shell uname)
 #Dossier pour les fichier objets
 OBJ_DIR := obj/
